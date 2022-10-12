@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.List;
 
 public class Person {
@@ -25,6 +26,8 @@ public class Person {
         this.lastName = lastName;
         this.age = age;
         this.sex = sex;
+        this.children = new ArrayList<Person>();
+        this.pets = new ArrayList<Pet>();
     }
 
     public String getName() {
@@ -107,18 +110,20 @@ public class Person {
         this.pets = pets;
     }
 
-    public void addParent( Person mother, Person father ) {
-        this.mother = mother;
-        this.father = father;
+    public void addParent( Person person ) {
+        if ( person.getSex().equals("V") )
+            this.mother = mother;
+        else
+            this.father = father;
         // should this person automatically be added as a child for mother and father?
     }
 
     public void addChild( Person child ) {
-        children.add(child);
+        this.children.add(child);
     }
 
     public void addPet( Pet pet ) {
-        pets.add(pet);
+        this.pets.add(pet);
     }
 
     public void addSibling( Person sibling ) {
@@ -126,7 +131,7 @@ public class Person {
     }
 
     public List<Person> getGrandChildren() {
-        List<Person> grandChildren;
+        List<Person> grandChildren = new ArrayList();
 
         if ( this.children.size() > 0 ) {
             for( Person child : this.children ) {

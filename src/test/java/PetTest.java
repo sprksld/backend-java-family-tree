@@ -8,13 +8,10 @@ class PetTest {
         // arrange
         Pet dog = new Pet( "Pluto", 92, "Sint-Hubertus");
 
-
         // act
-
         String result = dog.getName();
 
         // assert
-
         assertEquals( "Pluto", result );
     }
 

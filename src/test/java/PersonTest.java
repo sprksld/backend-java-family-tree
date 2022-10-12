@@ -9,14 +9,10 @@ class PersonTest {
         Person p = new Person( "John", "Doe", 41, "M");
         Pet d = new Pet("Scooby", 17, "Big Dog");
 
-        // act
+        // act && assert
 
-        String result = p.getName();
-
-        // assert
-
-        assertEquals( "John", result );
-        assertEquals( "Pete", result ); // should fail
+        assertEquals( "John", p.getName() );
+        assertEquals( "Doe", p.getLastName() );
 
     }
 

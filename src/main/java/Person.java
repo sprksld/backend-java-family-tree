@@ -9,9 +9,9 @@ public class Person {
     private String sex;
     private Person mother;
     private Person father;
-    private List<Person> siblings;
-    private List<Person> children;
-    private List<Pet> pets;
+    private List<Person> siblings = new ArrayList<>();
+    private List<Person> children = new ArrayList<>();
+    private List<Pet> pets = new ArrayList<>();
 
     public Person(String name, String lastName, int age, String sex) {
         this.name = name;
@@ -26,8 +26,6 @@ public class Person {
         this.lastName = lastName;
         this.age = age;
         this.sex = sex;
-        this.children = new ArrayList<Person>();
-        this.pets = new ArrayList<Pet>();
     }
 
     public String getName() {

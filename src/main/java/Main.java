@@ -1,3 +1,6 @@
+import java.util.ArrayList;
+import java.util.List;
+
 public class Main {
     public static void main(String[] args) {
         System.out.println("Hello familytree!");
@@ -12,6 +15,20 @@ public class Main {
         System.out.println( willem.getName() + " " + willem.getLastName() + " " + willem.getAge() );
         System.out.println( maxima.getName() + " " + maxima.getLastName() + " " + maxima.getAge() );
 
+        List<Person> children = new ArrayList<Person>();
+        children.add(amalia);
+        children.add(alexia);
+        children.add(ariane);
 
+        willem.setChildren( children );
+
+        for ( Person child : willem.getChildren() )
+            System.out.println(child.getName());
+
+        willem.addPet(mambo);
+
+        List<Pet> pets = willem.getPets();
+        for ( Pet p : pets )
+            System.out.println(p.getName());
     }
 }

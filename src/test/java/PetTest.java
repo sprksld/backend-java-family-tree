@@ -4,7 +4,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class PetTest {
     @Test
-    public void shouldHaveName() {
+    void shouldHaveName() {
         // arrange
         Pet dog = new Pet( "Pluto", 92, "Sint-Hubertus");
 
